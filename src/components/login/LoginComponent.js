@@ -1,16 +1,19 @@
 import React, { useState, useContext } from "react";
 import { AuthContext } from '../auth/AuthContext';
+import { useNavigate  } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await login(username, password);
-      alert("Login successful!");
+      console.log("Login successful!");
+      navigate("/dashboard");
     } catch (error) {
       console.error("Login failed", error);
       alert("Invalid credentials");

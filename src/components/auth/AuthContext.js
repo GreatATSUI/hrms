@@ -25,6 +25,7 @@ const AuthProvider = ({ children }) => {
     const user = jwtDecode(accessToken);
     setAuth({ accessToken, refreshToken, user });
     localStorage.setItem("auth", JSON.stringify({ accessToken, refreshToken, user }));
+
   };
 
   const refreshAccessToken = async () => {

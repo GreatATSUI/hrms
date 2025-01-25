@@ -5,6 +5,8 @@ import Login from './components/login/LoginComponent';
 import Registration from './components/registration/Registration1';
 import Home from './components/home/Home1';
 import AuthProvider from './components/auth/AuthContext';
+import PrivateRoute from './components/auth/PrivateRoute';
+
 
 function App() {
   return (   
@@ -14,7 +16,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+            {/* Private Routes */}
+            <Route path="/dashboard" element={<PrivateRoute component={Dashboard} />} />
       </Routes>
     </Router>
     </AuthProvider>
