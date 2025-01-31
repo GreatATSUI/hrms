@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 function Home() {
     return (
         <div className="App">
+            <div>
             <div className="d-flex justify-content-center align-items-center vh-100">
                 <div className="card text-center" style={{ width: '20rem' }}>
                     <div className="card-body">
@@ -15,6 +16,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     );
